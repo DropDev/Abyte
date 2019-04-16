@@ -4,7 +4,10 @@ import Vapor
 public func routes(_ router: Router) throws {
     // Basic "It works" example
     router.get { req in
-        return "It works!"
+        #if os(macOS)
+        return "123"
+        #endif
+        return "456"
     }
     
     // Basic "Hello, world!" example
